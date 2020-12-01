@@ -1,3 +1,3 @@
-module github.com/turelljj/turebst
+module turebst
 
 go 1.15
