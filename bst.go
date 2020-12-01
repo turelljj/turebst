@@ -4,12 +4,12 @@ import (
 	"fmt"
 )
 
-type bstree struct {
+type Bstree struct {
 	root *node
 }
 
 //Insert inserts an value to an bst tree
-func (b *bstree) Insert(v int) *bstree {
+func (b *Bstree) Insert(v int) *Bstree {
 	if b.root == nil {
 		b.root = &node{value: v, depth: 0}
 		return b
@@ -18,7 +18,7 @@ func (b *bstree) Insert(v int) *bstree {
 	return b
 }
 
-func (b *bstree) Sort() (sorted []int) {
+func (b *Bstree) Sort() (sorted []int) {
 	if b.root == nil {
 		return nil
 	}
@@ -34,7 +34,7 @@ func (b *bstree) Sort() (sorted []int) {
 // }
 
 // Find find the depth of given v in an bst tree
-func (b *bstree) Find(v int) (exsit bool, depth int) {
+func (b *Bstree) Find(v int) (exsit bool, depth int) {
 	if b.root == nil {
 		return false, -1
 	}
@@ -108,7 +108,7 @@ func (n *node) insert(v int) *node {
 }
 
 func main() {
-	t := &bstree{}
+	t := &Bstree{}
 	// for i := 0; i < 10; i++ {
 	// 	t.Insert(rand.Int())
 	// }
