@@ -1,4 +1,4 @@
-package turebst
+package github.com/turelljj/turebst
 
 import (
 	"fmt"

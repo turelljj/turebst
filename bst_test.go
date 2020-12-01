@@ -1,4 +1,4 @@
-package turebst
+package github.com/turelljj/turebst
 
 import (
 	"math/rand"
@@ -6,14 +6,14 @@ import (
 )
 
 func BenchmarkInsert(b *testing.B) {
-	tree := &bstree{}
+	tree := &Bstree{}
 	for i := 0; i < b.N; i++ {
 		tree.Insert(rand.Int())
 	}
 }
 
-func initBST() *bstree {
-	t := &bstree{}
+func initBST() *Bstree {
+	t := &Bstree{}
 	for i := 0; i < 10000; i++ {
 		t.Insert(rand.Int())
 	}
