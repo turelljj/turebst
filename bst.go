@@ -4,6 +4,7 @@ import (
 	"fmt"
 )
 
+// Bstree is an bst tree
 type Bstree struct {
 	root *node
 }
@@ -18,6 +19,7 @@ func (b *Bstree) Insert(v int) *Bstree {
 	return b
 }
 
+// Sort return an bst tree elem in an slice
 func (b *Bstree) Sort() (sorted []int) {
 	if b.root == nil {
 		return nil
@@ -105,26 +107,4 @@ func (n *node) insert(v int) *node {
 		}
 	}
 	return n
-}
-
-func main() {
-	t := &Bstree{}
-	// for i := 0; i < 10; i++ {
-	// 	t.Insert(rand.Int())
-	// }
-	t.Insert(23)
-	t.Insert(13)
-	t.Insert(3)
-	t.Insert(33)
-	t.Insert(53)
-	t.Insert(73)
-	t.Insert(33)
-	t.Insert(23)
-
-	PrintNode(t.root)
-	fmt.Print(t.Find(23))
-	fmt.Print("\n")
-	fmt.Print(t.Find(128))
-	fmt.Print("\n")
-	fmt.Print(t.Sort())
 }
