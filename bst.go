@@ -6,25 +6,25 @@ import (
 
 // Bstree is an bst tree
 type Bstree struct {
-	root *node
+	Root *node
 }
 
 //Insert inserts an value to an bst tree
 func (b *Bstree) Insert(v int) *Bstree {
-	if b.root == nil {
-		b.root = &node{value: v, depth: 0}
+	if b.Root == nil {
+		b.Root = &node{value: v, depth: 0}
 		return b
 	}
-	b.root.insert(v)
+	b.Root.insert(v)
 	return b
 }
 
 // Sort return an bst tree elem in an slice
 func (b *Bstree) Sort() (sorted []int) {
-	if b.root == nil {
+	if b.Root == nil {
 		return nil
 	}
-	sorted = append(sorted, b.root.sort()...)
+	sorted = append(sorted, b.Root.sort()...)
 	return sorted
 }
 
@@ -37,13 +37,13 @@ func (b *Bstree) Sort() (sorted []int) {
 
 // Find find the depth of given v in an bst tree
 func (b *Bstree) Find(v int) (exsit bool, depth int) {
-	if b.root == nil {
+	if b.Root == nil {
 		return false, -1
 	}
-	if b.root.value == v {
+	if b.Root.value == v {
 		return true, 0
 	}
-	return b.root.search(v)
+	return b.Root.search(v)
 }
 
 type node struct {
